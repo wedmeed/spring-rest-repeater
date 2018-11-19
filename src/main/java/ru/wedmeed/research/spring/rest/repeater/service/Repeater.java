@@ -1,20 +1,20 @@
 package ru.wedmeed.research.spring.rest.repeater.service;
 
-import java.util.HashMap;
+import ru.wedmeed.research.spring.rest.repeater.web.model.RepeaterRs;
+
 import java.util.Map;
 
 public class Repeater {
-    public Map<String, String> getResponse() {
+    public RepeaterRs getResponse() {
         return response;
     }
 
-    private Map<String,String> response;
+    private RepeaterRs response;
 
-    public Repeater (Map<String,String> input){
-        response = new HashMap<>();
-        for (Map.Entry<String, String> entry : input.entrySet()) {
+    public Repeater (Map<String,Object> input){
+        response = new RepeaterRs();
+        for (Map.Entry<String, Object> entry : input.entrySet()) {
             response.put(entry.getKey(), entry.getValue());
-
         }
     }
 
